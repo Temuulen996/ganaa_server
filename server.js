@@ -32,13 +32,6 @@ app.get("/api/v1/products", async (req, res) => {
   }
 });
 
-const server = app.listen(3000, () => {
+app.listen(3000, () => {
   console.log(`server ${process.env.PORT} port дээр аслаа`.rainbow);
-});
-
-process.on("unhandledRejection", (err, promise) => {
-  console.log(`алдаа гарлаа : ${err.message}`.red.underline.red.bold);
-  server.close(() => {
-    process.exit(1);
-  });
 });
