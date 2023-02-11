@@ -1,9 +1,10 @@
+//modules
 const express = require("express");
 const app = express();
 const colors = require("colors");
 const dotenv = require("dotenv");
-const connectDB = require("./config/db");
 const mongoose = require("mongoose");
+//
 dotenv.config({ path: "./config/config.env" });
 mongoose
   .connect(
@@ -17,9 +18,8 @@ mongoose
     console.log("connected");
   })
   .catch((err) => {
-    console.log("didnt connect");
+    console.log("didn't connect");
   });
-
 //models
 const Product = require("./models/Products");
 //
@@ -31,7 +31,8 @@ app.get("/api/v1/products", async (req, res) => {
     res.status(500).send({ success: false, data: err });
   }
 });
-
+//port, listen
 app.listen(3000, () => {
   console.log(`server ${process.env.PORT} port дээр аслаа`.rainbow);
 });
+//
