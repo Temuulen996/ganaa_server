@@ -3,8 +3,22 @@ const app = express();
 const colors = require("colors");
 const dotenv = require("dotenv");
 const connectDB = require("./config/db");
+const mongoose = require("mongoose");
 dotenv.config({ path: "./config/config.env" });
-connectDB();
+mongoose
+  .connect(
+    "mongodb+srv://buyankhishig:cu_12345678@cluster0.rife2pr.mongodb.net/cu",
+    {
+      useNewUrlParser: true,
+      useUnifiedTopology: true,
+    }
+  )
+  .then((result) => {
+    console.log("connected");
+  })
+  .catch((err) => {
+    console.log("didnt connect");
+  });
 
 //models
 const Product = require("./models/Products");
