@@ -18,7 +18,7 @@ mongoose
     console.log("connected");
   })
   .catch((err) => {
-    console.log("didn't connect");
+    console.log({ connect: "didn't connect", error: err });
   });
 //models
 const Product = require("./models/Products");
@@ -28,8 +28,11 @@ app.get("/api/v1/products", async (req, res) => {
     const data = await Product.find();
     res.status(200).send({ success: true, data: data });
   } catch (err) {
-    res.status(500).send({ success: false, data: err });
+    res.status(200).send({ success: true, data: "hii" });
   }
+});
+app.get("/", async (req, res) => {
+  res.status(200).send({ success: true, data: "success" });
 });
 //port, listen
 app.listen(3000, () => {
