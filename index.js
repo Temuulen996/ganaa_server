@@ -10,6 +10,7 @@ const productRoutes = require("./routes/Product.route");
 const promoRoutes = require("./routes/Promo.route");
 //
 var cors = require("cors");
+app.use(cors());
 dotenv.config({ path: "./config/config.env" });
 mongoose
   .connect(
