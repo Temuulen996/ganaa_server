@@ -9,6 +9,7 @@ const errorHandler = require("./middleware/error");
 const productRoutes = require("./routes/Product.route");
 const promoRoutes = require("./routes/Promo.route");
 //
+var cors = require("cors");
 dotenv.config({ path: "./config/config.env" });
 mongoose
   .connect(
