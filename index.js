@@ -6,6 +6,7 @@ const dotenv = require("dotenv");
 const mongoose = require("mongoose");
 const asyncHandler = require("./middleware/asyncHandler");
 const errorHandler = require("./middleware/error");
+const productRoutes = require("./routes/Product.route");
 //
 dotenv.config({ path: "./config/config.env" });
 mongoose
@@ -17,36 +18,23 @@ mongoose
     }
   )
   .then((result) => {
-    console.log("connected");
+    console.log("DB connected".green);
   })
   .catch((err) => {
-    console.log({ connect: "didn't connect", error: err });
+    console.log({ connect: "DB didn't connect".red, error: err });
   });
 //models
 const Product = require("./models/Products");
-
+app.use(express.json());
 //
-app.get(
-  "/api/v1/products",
-  asyncHandler(async (req, res) => {
-    const data = await Product.find();
-    res.status(200).send({ success: true, data: data });
-  })
-);
-app.get(
-  "/api/v1/product/:id",
-  asyncHandler(async (req, res, next) => {
-    const id = req.params.id;
-    const data = await Product.findById(id);
-    res.status(200).send({ success: true, data: data });
-  })
-);
+
 app.get(
   "/",
   asyncHandler(async (req, res) => {
     res.status(200).send({ success: true, data: "success" });
   })
 );
+app.use("/api/v1/products", productRoutes);
 app.use(errorHandler);
 //port, listen
 const server = app.listen(3000, () => {
