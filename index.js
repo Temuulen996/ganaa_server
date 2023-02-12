@@ -7,6 +7,7 @@ const mongoose = require("mongoose");
 const asyncHandler = require("./middleware/asyncHandler");
 const errorHandler = require("./middleware/error");
 const productRoutes = require("./routes/Product.route");
+const promoRoutes = require("./routes/Promo.route");
 //
 dotenv.config({ path: "./config/config.env" });
 mongoose
@@ -35,6 +36,7 @@ app.get(
   })
 );
 app.use("/api/v1/products", productRoutes);
+app.use("/api/v1/promos", promoRoutes);
 app.use(errorHandler);
 //port, listen
 const server = app.listen(3000, () => {

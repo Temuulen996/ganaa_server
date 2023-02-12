@@ -1,0 +1,22 @@
+[
+  {
+    "name": "1+1 Урамшуулал",
+    "path": "/img/promo1.jpeg",
+    "description": "Freshly baked goods that we stock up in the a.m. for you to grab and go!"
+  },
+  {
+    "name": "2+2 Урамшуулал",
+    "path": "/img/promo2.jpeg",
+    "description": "Freshly baked goods that we stock up in the a.m. for you to grab and go!"
+  },
+  {
+    "name": "2-р сарын урамшуулал",
+    "path": "/img/promo1.jpeg",
+    "description": "Freshly baked goods that we stock up in the a.m. for you to grab and go!"
+  },
+  {
+    "name": "3-р сарын урамшуулал",
+    "path": "/img/promo2.jpeg",
+    "description": "Freshly baked goods that we stock up in the a.m. for you to grab and go!"
+  }
+]

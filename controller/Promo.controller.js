@@ -1,11 +1,11 @@
 const asyncHandler = require("../middleware/asyncHandler");
-const Product = require("../models/Products");
+const Promo = require("../models/Promos");
 exports.findAll = asyncHandler(async (req, res, next) => {
-  const data = await Product.find();
+  const data = await Promo.find();
   res.status(200).send(data);
 });
 exports.findOneById = asyncHandler(async (req, res, next) => {
   const id = req.params.id;
   const data = await Product.findById(id);
-  res.status(200).send({ success: true, data: data });
+  res.status(200).send(data);
 });
