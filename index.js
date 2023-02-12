@@ -8,7 +8,7 @@ const mongoose = require("mongoose");
 dotenv.config({ path: "./config/config.env" });
 mongoose
   .connect(
-    "mongodb+srv://buyankhishig:cu_12345678@cluster0.rife2pr.mongodb.net/cu",
+    "mongodb+srv://Amazon123:Amazon123@cluster0.xqpzaoo.mongodb.net/cuApp",
     {
       useNewUrlParser: true,
       useUnifiedTopology: true,
